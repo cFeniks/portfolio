@@ -3,6 +3,7 @@ const { platform, username } = Astro.props;
 ---
 
 <a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<img src="src/static/github-mark.svg"/>
 
 <style>
     a {
@@ -11,4 +12,33 @@ const { platform, username } = Astro.props;
       background-color: #4c1d95;
       text-decoration: none;
     }
+
+    img {
+      width: 3%;
+      animation-name: out;
+      animation-duration: 1s;
+    }
+    
+    img:hover {
+      animation-duration: 1s;
+      animation-name: popup;
+    }
+
+
+    @keyframes popup{
+      from{
+        transform: scale(100%);
+      } to {
+        transform: scale(110%);
+      }
+    }
+
+    @keyframes out{
+      from{
+        transform: scale(110%);
+      } to {
+        transform: scale(100%);
+      }
+    }
+
   </style>
