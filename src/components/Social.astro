@@ -15,31 +15,12 @@ const { platform, username } = Astro.props;
 
     img {
       width: 2.5rem;
-      animation-name: out;
-      animation-duration: 1s;
+      transition: all 200ms ease;
+      transform: scale(1);
     }
     
     img:hover {
-      animation-duration: 1s;
-      animation-name: popup;
-      -webkit-animation-fill-mode: forwards;
-    }
-
-
-    @keyframes popup{
-      from{
-        transform: scale(100%);
-      } to {
-        transform: scale(110%);
-      }
-    }
-
-    @keyframes out{
-      from{
-        transform: scale(110%);
-      } to {
-        transform: scale(100%);
-      }
+      transform: scale(1.1);
     }
 
   </style>
